@@ -1,0 +1,81 @@
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Blurry glass effect */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 50px; /* Rounded edges */
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+
+/* Underline Effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #ffcc00;
+  transition: 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Responsive (Mobile) */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .navbar {
+    width: 90%;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
